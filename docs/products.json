@@ -1,32 +1,42 @@
 [
- {
-  "no": 1,
-  "name": "센츠웨이 위스키 인 더 우드 오 드 퍼퓸 30ml",
-  "category": "향이 좋은 남자",
-  "headline": "여자들이 좋아하는 남자향수",
-  "price": 34900,
-  "image": "https://d2ol7oe51mr4n9.cloudfront.net/user_3HXM4MhxsnxDN5EN8n1uKlfYmda/eff3ab22-afed-4ca9-ad5c-99537e9752bf.png",
-  "link": "https://naver.me/FmGzhLZ9",
-  "date": "2026-10-22"
- },
- {
-  "no": 2,
-  "name": "블라우풍트 2 in 1 듀얼 멀티 트리머 (코털·눈썹·구레나룻)",
-  "category": "얼굴이 깔끔한 남자",
-  "headline": "알파남 필수템",
-  "price": 21900,
-  "image": "https://herpick7.com/img/p2_src.jpg",
-  "link": "https://naver.me/F93a95XS",
-  "date": "2026-10-23"
- },
- {
-  "no": 3,
-  "name": "셀루미 360도 오토 페이스 트래킹 스마트폰 짐벌 SEL-AF360S",
-  "category": "사진 잘 찍어주는 남자",
-  "headline": "인생샷 찍어주는 남자",
-  "price": 39800,
-  "image": "https://herpick7.com/img/p3_src.jpg",
-  "link": "https://naver.me/xoGlWRxg",
-  "date": "2026-10-24"
- }
+  {
+    "no": 1,
+    "name": "센츠웨이 위스키 인 더 우드 오 드 퍼퓸 30ml",
+    "category": "향이 좋은 남자",
+    "headline": "여자들이 좋아하는 남자향수",
+    "price": 34900,
+    "image": "https://d2ol7oe51mr4n9.cloudfront.net/user_3HXM4MhxsnxDN5EN8n1uKlfYmda/eff3ab22-afed-4ca9-ad5c-99537e9752bf.png",
+    "link": "https://naver.me/FmGzhLZ9",
+    "date": "2026-10-22"
+  },
+  {
+    "no": 2,
+    "name": "블라우풍트 2 in 1 듀얼 멀티 트리머 (코털·눈썹·구레나룻)",
+    "category": "얼굴이 깔끔한 남자",
+    "headline": "알파남 필수템",
+    "price": 21900,
+    "image": "https://herpick7.com/img/p2_src.jpg",
+    "link": "https://naver.me/F93a95XS",
+    "date": "2026-10-23"
+  },
+  {
+    "no": 3,
+    "name": "셀루미 360도 오토 페이스 트래킹 스마트폰 짐벌 SEL-AF360S",
+    "category": "사진 잘 찍어주는 남자",
+    "headline": "인생샷 찍어주는 남자",
+    "price": 39800,
+    "image": "https://herpick7.com/img/p3_src.jpg",
+    "link": "https://naver.me/xoGlWRxg",
+    "date": "2026-10-24"
+  },
+  {
+    "no": 4,
+    "name": "삭피엔스 남자 패션 정장 신사 캐주얼 중목 양말",
+    "category": "센스 있는 남자",
+    "headline": "발목에서 센스 보이는 남자",
+    "price": 2300,
+    "image": "https://herpick7.com/img/p4_src.jpg",
+    "link": "https://naver.me/5kPG9p1k",
+    "date": "2026-10-25"
+  }
 ]

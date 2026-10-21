@@ -19,7 +19,7 @@ SITE_DOMAIN = os.environ.get("SITE_DOMAIN", "").strip()
 
 BRAND = "HERPICK"
 TAGLINE = "여사친이 골라주는 남자템"
-DISCLOSURE = "쇼핑 커넥트 활동으로 판매 시 수수료를 받을 수 있어요. 하린은 AI 버추얼 모델이에요."
+DISCLOSURE = "이 페이지는 네이버 쇼핑 커넥트 활동의 일환으로, 판매 발생 시 수수료를 받을 수 있어요."
 
 HEAD = """<!doctype html><html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">

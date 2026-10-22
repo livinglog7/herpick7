@@ -71,7 +71,6 @@ POSES = [
     ("걷는 순간", "caught mid-stride walking toward the camera, holding a shoulder bag"),
     ("한쪽 다리 뒤로", "standing with one leg kicked back playfully, holding a top-handle handbag"),
     ("계단 내려오기", "walking down the stairs holding the handrail, looking down"),
-    ("테이블에 기대기", "leaning forward over the table, chin near her hand"),
     ("거울 셀카", "taking a mirror selfie with her phone, one hip popped"),
     ("수영장 가장자리", "sitting on the pool edge with hands on the deck behind her"),
     ("뒷모습 걷기", "walking away from the camera, looking slightly back"),
@@ -92,12 +91,12 @@ HAIRS = [
 
 CAMERAS = [
     "candid smartphone photo, natural light",
-    "shot on 35mm film, soft grain",
-    "iPhone photo, slightly warm tone",
+    "film-look colors, soft grain",
+    "phone camera photo, slightly warm tone",
 ]
 
 ALL_POSES = {p[0] for p in POSES}
-_SIT = {"다리 꼬고 앉기", "턱 괴고 앉기", "테이블에 기대기", "내려다보는 셀카", "브이 셀카(위에서)", "윙크 클로즈업", "머리 넘기기"}
+_SIT = {"다리 꼬고 앉기", "턱 괴고 앉기", "내려다보는 셀카", "브이 셀카(위에서)", "윙크 클로즈업", "머리 넘기기"}
 _WALK = {"걷는 순간", "뒷모습 걷기", "뒤돌아보기", "한쪽 다리 뒤로", "허리에 손", "머리 넘기기", "브이 셀카(위에서)", "두 팔 머리 뒤"}
 # 장소마다 자연스러운 포즈만
 SCENE_POSES = {
@@ -140,7 +139,7 @@ def prompts(row: int) -> dict:
             f"wearing {c['outfit'][1]}, {c['scene'][1]}")
     out = []
     for pose in c["poses"]:
-        out.append(f"{base}, {pose[1]}, {c['camera']}, realistic Instagram lifestyle photo")
+        out.append(f"{base}, {pose[1]}, {c['camera']}, realistic lifestyle photo, no text, no borders, no app interface")
     return {
         "row": row,
         "summary": f"{c['outfit'][0]} / {c['hair'][0]} / {c['scene'][0]} / 포즈: {c['poses'][0][0]}, {c['poses'][1][0]}",

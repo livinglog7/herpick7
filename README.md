@@ -14,3 +14,4 @@
   - Metricool: `instagramData.type = REEL`, `showReelOnFeed = true`, `videoThumbnailUrl = 커버`
 - 캡션: 자연스러운 말투, 끝은 "📌 프로필 링크 N번" + 상품 해시태그. #광고 #AI모델·수수료 문구 넣지 않음(수수료 안내는 herpick7.com에만)
 - 하린 사진: `pipeline/harin_style.py` 옷·장소·포즈·헤어 순환, 후보 3장 → `tools/facecheck.py` 0.70 이상 최고점 사용
+- 하린 배경: 큰 간판·한글 글씨가 크게 보이는 장소는 피함(AI가 한글을 깨뜨림). 간판 없는 장소 + 배경 흐림

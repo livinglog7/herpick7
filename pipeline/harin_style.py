@@ -4,6 +4,7 @@
 한 줄(오른쪽·왼쪽 하린 2장)에 쓸 프롬프트 2개를 만든다.
 - 같은 줄 2장은 옷·헤어·장소가 같고 포즈·구도만 다르다 (하루의 이야기).
 - 몸매 문구는 고정, 옷은 항상 몸에 붙는 핏(가슴 크기 유지).
+- 배경: 큰 간판·글씨가 보이는 장소 금지(AI가 한글을 깨뜨림) → 간판 없는 장소 + 배경 흐림
 - 얼굴 고정: soul_2 + 하린 v2(c4722e5c) 로 자리마다 후보 3장 생성 →
   tools/facecheck.py 로 첫 학습 얼굴(하린 v1 12장)과 비교해 0.70 이상 중 최고점만 사용.
   (하린 v3 4027e7c5 는 얼굴은 조금 낫지만 가슴이 작아져서 보류)
@@ -45,7 +46,7 @@ OUTFITS = [
 # (이름, 프롬프트, 야간 여부)
 SCENES = [
     ("카페 창가", "sitting at a window table in a bright Seoul cafe with an iced americano", False),
-    ("편의점", "inside a bright Korean convenience store aisle holding a shopping basket", False),
+    ("꽃집 앞", "in front of a small flower shop with buckets of fresh flowers", False),
     ("베이커리 카운터", "at the counter of a cozy bakery cafe with pastries in the display", False),
     ("호텔 방 소파", "in a sunlit hotel room sitting on a cream sofa near the window", False),
     ("아파트 거실", "in a bright minimal apartment living room with a beige sofa", False),
@@ -54,7 +55,7 @@ SCENES = [
     ("리조트 수영장", "at the edge of a blue resort infinity pool with white villas behind", False),
     ("갤러리 벽", "in a white art gallery with paintings on the wall", False),
     ("호텔 라운지", "in a dim warm hotel lounge with leather sofas and wall lamps", True),
-    ("성수동 거리", "on a trendy Seongsu-dong street in front of a cafe with a brand sign", False),
+    ("성수동 골목", "on a quiet tree-lined side street with red brick walls in Seongsu-dong", False),
     ("부티크 입구", "in front of a stylish boutique entrance with a lattice wall", False),
     ("공원 벤치", "on a park bench under autumn trees", False),
     ("노을 해변", "on a sandy beach at sunset with gentle waves", False),
@@ -104,13 +105,13 @@ _WALK = {"걷는 순간", "뒷모습 걷기", "뒤돌아보기", "한쪽 다리 
 # 장소마다 자연스러운 포즈만
 SCENE_POSES = {
     "카페 창가": _SIT, "베이커리 카운터": _SIT | {"뒤돌아보기", "허리에 손"},
-    "편의점": {"내려다보는 셀카", "뒤돌아보기", "브이 셀카(위에서)", "윙크 클로즈업", "머리 넘기기"},
+    "꽃집 앞": {"내려다보는 셀카", "뒤돌아보기", "브이 셀카(위에서)", "윙크 클로즈업", "머리 넘기기"},
     "호텔 방 소파": _SIT | {"두 팔 머리 뒤", "거울 셀카"}, "아파트 거실": _SIT | {"두 팔 머리 뒤", "거울 셀카", "허리에 손"},
     "노출 콘크리트 계단": {"계단 내려오기", "다리 꼬고 앉기", "뒤돌아보기", "머리 넘기기", "허리에 손"},
     "벽 앞 벤치": {"다리 꼬고 앉기", "턱 괴고 앉기", "머리 넘기기", "허리에 손", "두 팔 머리 뒤"},
     "리조트 수영장": {"수영장 가장자리", "뒷모습 걷기", "뒤돌아보기", "머리 넘기기", "두 팔 머리 뒤"},
     "갤러리 벽": _WALK, "호텔 라운지": _SIT | {"허리에 손", "거울 셀카"},
-    "성수동 거리": _WALK, "부티크 입구": _WALK, "공원 벤치": _SIT | {"두 팔 머리 뒤"},
+    "성수동 골목": _WALK, "부티크 입구": _WALK, "공원 벤치": _SIT | {"두 팔 머리 뒤"},
     "노을 해변": {"뒷모습 걷기", "뒤돌아보기", "머리 넘기기", "걷는 순간", "두 팔 머리 뒤"},
     "침실": {"두 팔 머리 뒤", "윙크 클로즈업", "브이 셀카(위에서)", "거울 셀카", "머리 넘기기", "턱 괴고 앉기"},
     "야경 루프탑": _WALK | {"다리 꼬고 앉기"}, "백화점 에스컬레이터": _WALK, "한강 산책로": _WALK,
@@ -142,7 +143,7 @@ def prompts(row: int) -> dict:
             f"wearing {c['outfit'][1]}, {c['scene'][1]}")
     out = []
     for pose in c["poses"]:
-        out.append(f"{base}, {pose[1]}, {c['camera']}, natural candid lifestyle photo")
+        out.append(f"{base}, {pose[1]}, {c['camera']}, background softly blurred with shallow depth of field, natural candid lifestyle photo")
     return {
         "row": row,
         "summary": f"{c['outfit'][0]} / {c['hair'][0]} / {c['scene'][0]} / 포즈: {c['poses'][0][0]}, {c['poses'][1][0]}",

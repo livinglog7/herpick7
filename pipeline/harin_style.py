@@ -94,8 +94,8 @@ HAIRS = [
 
 CAMERAS = [
     "candid smartphone photo, natural light",
-    "film-look colors, soft grain",
-    "phone camera photo, slightly warm tone",
+    "warm natural daylight",
+    "soft golden hour light",
 ]
 
 ALL_POSES = {p[0] for p in POSES}
@@ -142,7 +142,7 @@ def prompts(row: int) -> dict:
             f"wearing {c['outfit'][1]}, {c['scene'][1]}")
     out = []
     for pose in c["poses"]:
-        out.append(f"{base}, {pose[1]}, {c['camera']}, realistic lifestyle photo, no text, no borders, no app interface")
+        out.append(f"{base}, {pose[1]}, {c['camera']}, natural candid lifestyle photo")
     return {
         "row": row,
         "summary": f"{c['outfit'][0]} / {c['hair'][0]} / {c['scene'][0]} / 포즈: {c['poses'][0][0]}, {c['poses'][1][0]}",

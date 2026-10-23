@@ -15,7 +15,9 @@
 - 옆모습 기준: assets/harin_ref/side_01.png (사용자 지정, 10/23). 첫 학습 얼굴 대비 0.79 → 같은 사람 확인.
   Higgsfield media_id 1fc36fc0-f68d-4b74-b3cd-401460392064.
   얼굴 검사 기준 = 첫 학습 정면 12장 + 옆모습(샌드박스 ~/face/refs.sh 의 HARIN_REFS).
-  고개 돌리는 영상: 끝 장면을 이 옆모습 각도로 따로 생성·검사(0.70↑)해 Kling end_image 로 넣는다.
+  고개 돌리는 영상: 끝 장면을 이 옆모습 각도로 따로 생성(image_auto, 옆모습 참고 사진 함께)·검사해
+  Kling pro + start_image/end_image 로 만든다. 2개 뽑아 전체 프레임 검사(~/face/vidcheck.sh) 최저점 높은 것 사용.
+  (10/23 1줄 오른쪽 테스트: 기존 최저 0.20/중간 0.53 → 새 방식 최저 0.53/중간 0.70)
 사용: python pipeline/harin_style.py 7   → 7번째 줄 프롬프트 출력
 """
 from __future__ import annotations

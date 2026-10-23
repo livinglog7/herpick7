@@ -18,6 +18,8 @@
   고개 돌리는 영상: 끝 장면을 이 옆모습 각도로 따로 생성(image_auto, 옆모습 참고 사진 함께)·검사해
   Kling pro + start_image/end_image 로 만든다. 2개 뽑아 전체 프레임 검사(~/face/vidcheck.sh) 최저점 높은 것 사용.
   (10/23 1줄 오른쪽 테스트: 기존 최저 0.20/중간 0.53 → 새 방식 최저 0.53/중간 0.70)
+  고개를 크게 안 돌리는 영상: start_image = end_image = 원본 사진(제자리로 돌아오는 동작) + pro.
+  (10/23 13개 재제작: 전부 기존보다 최저점 상승, 최저 0.44~0.65)
 사용: python pipeline/harin_style.py 7   → 7번째 줄 프롬프트 출력
 """
 from __future__ import annotations

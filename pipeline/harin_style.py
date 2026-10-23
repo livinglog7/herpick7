@@ -12,6 +12,10 @@
   3장 중 통과가 없으면 3장 더(최대 6장). 그래도 없으면 그 자리 헤어/포즈를 정면 얼굴이 잘 보이는 것으로 교체.
   (10/22 테스트: 하이 번·옆으로 앉아 고개 돌리기는 6장 모두 0.66 이하 → FACE_RISKY 참고)
   얼굴만 따로 바꾸는 편집(image_auto 얼굴 교체)은 오히려 점수가 떨어져서 쓰지 않음.
+- 옆모습 기준: assets/harin_ref/side_01.png (사용자 지정, 10/23). 첫 학습 얼굴 대비 0.79 → 같은 사람 확인.
+  Higgsfield media_id 1fc36fc0-f68d-4b74-b3cd-401460392064.
+  얼굴 검사 기준 = 첫 학습 정면 12장 + 옆모습(샌드박스 ~/face/refs.sh 의 HARIN_REFS).
+  고개 돌리는 영상: 끝 장면을 이 옆모습 각도로 따로 생성·검사(0.70↑)해 Kling end_image 로 넣는다.
 사용: python pipeline/harin_style.py 7   → 7번째 줄 프롬프트 출력
 """
 from __future__ import annotations
